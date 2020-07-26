@@ -1,0 +1,83 @@
+Day 1 
+
+BLOG PROJECT STEPS
+
+Created a folder Named : BLOG Project 
+create a react app in the folder using Terminal 
+( use commannd : npx create-react-app blog 
+press enter want wait for it to install   ).
+
+Create a new folder in the BLOGProject named : blogBackend
+open it with atom 
+initialize npm using command in termiinal : nom init -y
+install express,cors,dotenv,mongoose using env
+(command :npm i express cors dotenv mongoose)
+
+Open package,son and change the main to server.js and clesr the script:
+
+Create a new fille in the blogBackend named : server.js
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+INSIDE Server.js 
+
+const express = require ("express");
+//this is the comand to require the express module so that we can use express.
+
+const mongoose = require("mongoose");
+//this is a module(or package) that is used to access mongodb using node for backend.
+
+const cors = require("cors");
+//Cross-origin resource sharing (CORS) allows AJAX requests to skip the Same-origin policy and access resources from remote hosts.
+
+require("dotenv").config()
+//dotenv is a simple way to allow you to create secret keys that your application needs to function and keep them from going public.
+
+SETTING UP EXPRESS::::::::::::::::::::::::
+
+const app = express();
+//this helps to use express module as app
+
+app.use(cors());
+//this is to use cors package with express
+
+app.use(express.json());
+// its is a method to recognize the incoming Request Object as a JSON Object.
+
+const PORT = proces.env.PORT || 5000;
+// this implies that PORT constant can be any evironment variable or a 5000
+
+console.log("Starting Server");
+// this is to tell that the programm run fine till this point 
+
+app.listen(PORT,()=> console.log("Server started  on the port:" + PORT))
+// this starts the server and log it in he terminal
+
+
+IN THE TERMINAL RUN : node server.js 
+( to run the server snd check for any issues)
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+SETTING UP THE MONGO DB :
+_______________________________________________________________________________________________________________________________
+
+//Create a .env Filr in the blogBackend
+// Type : MONGOD_URI = .......................(blank for now)
+
+
+
+console.log("Connecting to MongoDb");
+
+mongoose.connect(procress.env.MONGOD_URI,{useNewUrlParser:true ,useUnifiedTopology:true},
+		 (err)=>{ if (err) console.error(err);
+		console.log("Connection Established to MongoDb")
+			}
+			);
+//This is to set a connection with the Mongo Db server 
+
+
+
+
