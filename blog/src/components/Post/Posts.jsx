@@ -25,14 +25,10 @@ function renderPost(){
 
 
 return <div>
-
-   {renderPost()}
-
-
-
-  <Link to = "/posts">  POSTS  </Link>
-<Link to ="/">HOME</Link>
-</div>}
+          <Link to = "/posts">  POSTS  </Link>
+          <Link to ="/">HOME</Link>
+          {renderPost()}
+      </div>}
 
 
 

@@ -2,6 +2,9 @@ import React,{useState,useEffect} from "react";
 import {Link} from "react-router-dom"
 import renderDate from "./renderDate.jsx"
 import renderTag from "./renderTag.jsx"
+import "../../css/postlist.css"
+import "../../css/home.css"
+
 
 function PostLists() {
   const [blog,update] = useState([])
@@ -14,10 +17,12 @@ function PostLists() {
       const set = await data.json();
     update(set);
     }
-  return(<div> <div>
+  return(<div>
+    <div className="home"><Link to ="/"><li>HOME</li></Link></div>
+    <div className="container">
     {blog.map(post => (
       <Link to = {"/posts/" + post._id}>
-      <button key = {post._id}>
+      <button className="posts" key = {post._id}>
             <h1>{post.title}</h1>
             <span>{renderDate( post.createdAt)} </span>
             <div>{renderTag(post.tags)}</div>
@@ -25,7 +30,7 @@ function PostLists() {
         </Link> ))}
 
     </div>
-    <div><Link to ="/">HOME</Link></div></div>
+    </div>
 
   )}
 
