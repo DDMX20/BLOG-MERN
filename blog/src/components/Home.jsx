@@ -9,7 +9,9 @@ function Home() {
     <Link to = "/posts">
     <li>POSTS</li>
 </Link>
-
+<Link to = "/Form">
+<li>CREATE</li>
+</Link>
   </div>
 
 }

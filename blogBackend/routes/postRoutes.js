@@ -1,5 +1,8 @@
 const router = require("express").Router();
+const bodyParser= require('body-parser')
+
 const Post = require("../models/postModel.js")
+
 
 //Retrival of data from the database
 router.post("/",async (req,res) =>{
