@@ -1,11 +1,12 @@
 import React from "react"
+function RenderTag(tags)
+ {
+   return tags.map(tags=>
+     {
+       return  <span key={tags} >{tags}</span>
+     }
+     )
 
-function renderTag(tags) {
+  }
 
-  return tags.map(tags=>{
-    return  <span key={tags} >{tags}</span>
-  })
-
-}
-
-export default renderTag
+export default RenderTag

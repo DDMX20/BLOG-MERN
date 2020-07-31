@@ -5,14 +5,13 @@ import "../css/home.css"
 function Home() {
 
   return <div className="home">
-
-    <Link to = "/posts">
-    <li>POSTS</li>
-</Link>
-<Link to = "/Form">
-<li>CREATE</li>
-</Link>
-  </div>
+            <Link to = "/posts">
+            <li>POSTS</li>
+            </Link>
+            <Link to = "/Form">
+            <li>CREATE</li>
+            </Link>
+        </div>
 
 }
 

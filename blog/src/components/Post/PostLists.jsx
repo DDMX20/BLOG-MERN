@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import {Link} from "react-router-dom"
-import renderDate from "./renderDate.jsx"
-import renderTag from "./renderTag.jsx"
+import RenderDate from "./renderDate.jsx"
+import RenderTag from "./renderTag.jsx"
 import "../../css/postlist.css"
 import "../../css/home.css"
 
@@ -19,7 +19,7 @@ function PostLists() {
     update(set);
     }
 
-    /////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   return(<div>
     <div className="home"><Link to ="/"><li>HOME</li></Link></div>
@@ -28,8 +28,9 @@ function PostLists() {
       <Link to = {"/posts/" + post._id}>
       <button className="posts" key = {post._id}>
             <h1>{post.title}</h1>
-            <span>{renderDate( post.createdAt)} </span>
-            <div>{renderTag(post.tags)}</div>
+            <span>{RenderDate( post.createdAt)} </span>
+            <div>{RenderTag(post.tags)}</div>
+            
         </button>
         </Link> ))}
 

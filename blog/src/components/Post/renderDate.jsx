@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import React from "react"
 
-function renderDate(dataString ) {
+function RenderDate(dataString ) {
 
   const date =new Date(dataString)
   const month = ["January","February","March","April","May","June","July",
@@ -10,4 +10,4 @@ function renderDate(dataString ) {
 
 }
 
-export default renderDate;
+export default RenderDate;
