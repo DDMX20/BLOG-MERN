@@ -39,4 +39,9 @@ router.delete('/:id/delete', async (req, res) => {
   }
 })
 
+router.get("/:id/update",async (req,res)=>{
+  const update = await Post.findById(req.params.id);
+
+  res.json(update)
+})
 module.exports = router;

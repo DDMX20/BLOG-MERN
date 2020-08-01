@@ -2,8 +2,8 @@ import React,{useState,useEffect} from "react";
 import {Link} from "react-router-dom"
 import RenderDate from "./renderDate.jsx"
 import RenderTag from "./renderTag.jsx"
-import "../../css/postlist.css"
 import "../../css/home.css"
+import "../../css/post.css"
 
 
 function PostLists() {
@@ -27,14 +27,15 @@ function PostLists() {
     {blog.map(post => (
       <Link to = {"/posts/" + post._id}>
       <button className="posts" key = {post._id}>
-            <h1>{post.title}</h1>
+            <h1 className="title">{post.title}</h1>
             <span>{RenderDate( post.createdAt)} </span>
             <div>{RenderTag(post.tags)}</div>
-            
+
         </button>
         </Link> ))}
 
     </div>
+
     </div>
 
   )}

@@ -11,6 +11,7 @@ function DeletePost(props){
       const main = await fetch("http://localhost:5000/posts/"+props.match.params.id)
       const del=main.url
       const data = fetch(del+"/delete", {method: 'DELETE'})
+      return data.json()
   }
 
         return (<div>

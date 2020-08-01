@@ -1,0 +1,38 @@
+.post{
+
+  margin:25px;
+  border-radius:25px;
+  background-color: white;
+
+  box-shadow: -1px 1px 1px rgba(255, 0, 0, .5);
+}
+.post .title{
+  background-color:rgba(white, 1);
+  text-align: center;
+  outline-style: none;
+  border:none;
+  clip-path: ellipse(28% 100% at 50% 10%);
+  box-shadow: 0px 10px rgba(255, 0, 0, .5);
+
+}
+.container{
+  position: relative;
+  width :50%;
+  margin :25px;
+  padding:30px;
+  text-align:left;
+}
+.posts{
+  display: inline;
+  width :45%;
+  height:100px;
+  border: none;
+  margin: auto;
+  margin-bottom: 25px;
+  margin-right: 25px;
+  outline:none;
+  background-color: rgba(244, 241, 224, 0.5);
+  border-radius: 25px;
+clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+
+  }
