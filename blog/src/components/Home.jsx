@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import Login from "./Login"
+
 
 function Home() {
 
@@ -13,10 +13,8 @@ function Home() {
             <li id="a">CREATE</li>
             </Link>
         </div>
-        
-        <div>
-        <Login/>
-        </div>
+
+
         </div>
 
 }

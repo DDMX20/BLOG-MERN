@@ -38,6 +38,18 @@ router.delete('/:id/delete', async (req, res) => {
     res.status(500).send(err)
   }
 })
+router.post("/:id/update",function(req,res){
+    const {title , createdAt, tags, html} = req.body;
+    console.log(title);
+    Post.findOneAndUpdateMany({_id:req.params.id},{title,createdAt,tags,html},(err,post)=>{
+      if (err){
+        console.log(err);
+      }else{
+        res.json(post)
+      }
+    });
+    }
+  )
 
 router.get("/:id/update",async (req,res)=>{
   const update = await Post.findById(req.params.id);

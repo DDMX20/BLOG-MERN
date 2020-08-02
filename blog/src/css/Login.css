@@ -1,8 +1,0 @@
-.Login{
-width :40%;
-height :80vh;
-background-color: rgba(244, 241, 224, .5);
-clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-position: absolute;
-   right: 0;
-}

@@ -1,9 +1,7 @@
 import React,{useState,useEffect} from "react"
 import {Link} from "react-router-dom"
 
-
 function Posts(props) {
-
 const [post,update]= useState({})
 useEffect(()=>{
     fetchItems()
@@ -24,12 +22,8 @@ function renderHtml(){
 function renderPost(){
     return <div dangerouslySetInnerHTML={renderHtml()}></div>;
   }
-  function handleClick() {
-    alert("ARE YOU SURE YOU WANT TO DELETE THE POST WITH TITLE : " +post.title)
 
-  }
-
-return <div >
+  return <div >
           <div className="home">
           <Link to = "/posts"> <li id="a">POSTS</li>  </Link>
           <Link to ="/"><li id="a">HOME</li></Link>
@@ -38,8 +32,9 @@ return <div >
           <h1 className="title">{post.title}</h1>
           <div className="container">
           {renderPost()}
-          <Link to = {"/"+props.match.params.id+"/update"}><button>Edit</button></Link>
-          <Link to = {"/"+props.match.params.id+"/delete"}><button onClick={handleClick}>delete</button></Link>
+          <Link  to = {"/update/"+props.match.params.id}><button>Edit</button></Link>
+          <Link to = {"/delete/"+props.match.params.id}><button>delete</button></Link>
+
           </div>
           </div>
 
