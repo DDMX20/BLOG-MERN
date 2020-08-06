@@ -17,43 +17,35 @@ router.post("/",async (req,res) =>{
     console.error(err);
   }
 });
-
+////////////////////Reading the date///////////////////////////////////////////////////
 router.get("/",async (req,res)=>{
   const posts = await Post.find();
   res.json(posts)
 })
-
-router.get("/:id",async (req,res)=>{
+router.route("/:id")
+///////////////////////Reading Specific Data//////////////////////////////////////////
+.get(async (req,res)=>{
   const post = await Post.findById(req.params.id);
-
   res.json(post)
 })
+///////////////////////Deleting Specific Data//////////////////////////////////////////
+.delete( async (req, res) => {
+   Post.deleteOne({_id:req.params.id},(err)=>{
+    if (err) {res.status(404).send("No item found")}
+    else {res.status(200).send()}})
+  })
+///////////////////////Updating Specific Data//////////////////////////////////////////
+.patch(function(req,res){
 
-router.delete('/:id/delete', async (req, res) => {
-  try {
-    const data = await Post.findByIdAndDelete(req.params.id)
-    if (!data) res.status(404).send("No item found")
-    res.status(200).send()
-  } catch (err) {
-    res.status(500).send(err)
-  }
-})
-router.post("/:id/update",function(req,res){
-    const {title , createdAt, tags, html} = req.body;
-    console.log(title);
-    Post.findOneAndUpdateMany({_id:req.params.id},{title,createdAt,tags,html},(err,post)=>{
+    Post.updateMany({_id:req.params.id},{$set:req.body},(err,post)=>{
       if (err){
         console.log(err);
       }else{
         res.json(post)
       }
-    });
+    })
     }
   )
+;
 
-router.get("/:id/update",async (req,res)=>{
-  const update = await Post.findById(req.params.id);
-
-  res.json(update)
-})
 module.exports = router;

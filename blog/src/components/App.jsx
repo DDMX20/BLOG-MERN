@@ -7,6 +7,7 @@ import Form from "./Form/BlogForm"
 import PostBlog from "./Post/PostBlog"
 import DeletePost from "./Post/DeletePost"
 import UpdatePost from "./Post/UpdatePost"
+
 import "../css/home.css"
 function App() {
   return (<div className="Page">
@@ -17,7 +18,7 @@ function App() {
                 <Route path ="/delete/:id" component={DeletePost}/>
                 <Route path ="/posts" component={PostLists}/>
                 <Route path ="/Form" component={Form}/>
-                // <Route path ="/update/:id" component={(props) => <UpdatePost {...props} />}/>
+                <Route path ="/update/:id" component={UpdatePost}/>
                 <Route path ="/newposts" component={PostBlog}/>
             </Switch>
           </Router>

@@ -2,13 +2,14 @@ import React,{useState} from "react";
 import PostBlog from "../Post/PostBlog"
 import {Link} from "react-router-dom"
 import "../../css/form.css"
-import UpdatePost from "../Post/UpdatePost"
 
+import UpdateBlog from "../Post/UpdateBlog"
+import Button from "./Button"
 function Form(props) {
 
       const [isClicked,clicked] = useState(false)
 
-      const [create, update] = useState({title:"",tags:"",html:""})
+      const [create, update] = useState({title:props.title||"",tags:props.tags||"",html:props.html||""})
       var {title,tags,html} = create
 
      function handleChange(event)
@@ -33,15 +34,17 @@ return <div>
           </div>
           <div className="post1">
           <div className="form">
-          <form action="/newposts">
-                <lable for="title">TITLE :</lable><br/>
+          <form >
+
                 <input  className="text" onChange ={handleChange}  type="text" name="title" value= {title} placeholder="TITLE"/><br/>
-                <lable for="html">Content:</lable><br/>
+
                 <textarea className="textArea"   onChange ={handleChange}  name="html" value={html}/><br/>
-                <lable for="tags">Tags :</lable><br/>
+
                 <input className="text"  onChange ={handleChange}  type="text" name="tags" value={tags.split(" ")}placeholder="#TAGNME"/><br/>
                   <button  type="Submit" onClick={handleClick} name="html">POST</button>
-                {isClicked ?<PostBlog data={isClicked?create:console.log("err")} />:console.log("not Posted")}
+                    {isClicked ?<PostBlog data={isClicked?create:console.log("err")} />:console.log("not Posted")}
+                  <Button text="UPDATE" data={create} id={props.id} />
+
 
 
             </form>
