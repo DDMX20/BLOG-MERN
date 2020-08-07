@@ -16,7 +16,7 @@ function App() {
                 <Route path ="/" exact component={Home}/>
                 <Route path ="/posts/:id" component={Posts}/>
                 <Route path ="/delete/:id" component={DeletePost}/>
-                <Route path ="/posts" component={PostLists}/>
+                <Route path ="/posts" component={PostLists} />
                 <Route path ="/Form" component={Form}/>
                 <Route path ="/update/:id" component={UpdatePost}/>
                 <Route path ="/newposts" component={PostBlog}/>

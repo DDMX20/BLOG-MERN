@@ -36,3 +36,12 @@
 clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
 
   }
+
+  button {
+    background-color: rgba(255, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 50px;
+    padding: 10px 25px 10px 25px;
+    border:none;
+    margin: 25px;
+  }

@@ -18,18 +18,18 @@ const fetchItems= async() =>
 set?fetchItems():console.log("not deleted")
 function handleClick()
 {
-  {if(window.confirm('Are you sure you want to delete the Post '))
+  if(window.confirm('Are you sure you want to delete the Post '))
   {handleSet(true)}}
 
-}
+  return (<div className="home">
+        <Link to="/posts"><li>POSTS</li></Link>
+                <div className="delete">
+                <h3>Are you sure you want to delete the post</h3>
+                <button  onClick={handleClick}>Confirm Delete</button>
 
 
-        return (<div>
 
-                <button onClick={handleClick}>Confirm Delete</button>
-
-
-                <Link to="/posts"></Link>
+                </div>
                 </div>
                )
 
